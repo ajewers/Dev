@@ -18,6 +18,8 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -67,6 +69,11 @@ public class Video {
     /* Fullscreen information */
     private FullscreenInfo fsInfo;
     
+    /*Icons */
+    private Image Play_HO_CONTENT_RECT_Transparent_L;
+    private Image Play_ST_CONTENT_RECT_Transparent_L;
+    private Image Play_PRE_CONTENT_RECT_Transparent_L;
+    
     public Video(Group nGroup, double x, double y, double width, String sourcefile, boolean autoPlay, boolean loop) {
         /* Set the group reference */
         this.group = nGroup;
@@ -75,6 +82,9 @@ public class Video {
         playButton = new Button("Play");
         playButton.setId("play");
         playButton.setOnAction(new ButtonEventHandler());
+    	Play_ST_CONTENT_RECT_Transparent_L = new Image(getClass().getResourceAsStream("/TeachEasy/Icons/Play_ST_CONTENT_RECT_Transparent_L.png"));
+    	playButton.setGraphic(new ImageView(Play_ST_CONTENT_RECT_Transparent_L));
+    	
         
         /* Stop Control */
         stopButton = new Button("Stop");
@@ -155,7 +165,8 @@ public class Video {
         
         /* Init the fullscreen info */
         fsInfo = new FullscreenInfo(x, y, width, false);
-        
+        /* Initialise Icons */
+        //icons();
         /* Add the video frame to the group */
         group.getChildren().add(videoFrame);
     }
@@ -303,8 +314,17 @@ public class Video {
             /* Set the fullscreen flag true */
             fsInfo.setFullscreen(true);
         }
+
     }
-    
+    /** Set up the UI icons */
+//    public void icons() {
+//    	/* Play Button icons */
+//    	//ImageView playIcon = new ImageView();
+//    	Play_HO_CONTENT_RECT_Transparent_L = new Image(getClass().getResourceAsStream("/TeachEasy/Icons/Play_HO_CONTENT_RECT_Transparent_L.png"));
+//    	Play_PRE_CONTENT_RECT_Transparent_L = new Image(getClass().getResourceAsStream("/TeachEasy/Icons/Play_PRE_CONTENT_RECT_Transparent_L.png"));
+//    	Play_ST_CONTENT_RECT_Transparent_L = new Image(getClass().getResourceAsStream("/TeachEasy/Icons/Play_ST_CONTENT_RECT_Transparent_L.png"));
+//    	
+//    }
     /**
      * Mouse Event Handler Class
      */
@@ -339,11 +359,13 @@ public class Video {
                     /* If the video was playing, pause it and change the button label to play */
                     mediaPlayer.pause();
                     playButton.setText("Play");
+                    //playButton.setGraphic(new ImageView(Play_ST_CONTENT_RECT_Transparent_L));
                 } else if(mediaPlayer.getStatus() == MediaPlayer.Status.PAUSED ||
                           mediaPlayer.getStatus() == MediaPlayer.Status.STOPPED ||
                           mediaPlayer.getStatus() == MediaPlayer.Status.READY) {
                     /* If the video wasn't playing, play it and change the button label to pause */
                     mediaPlayer.play();
+                   // playButton.setGraphic(new ImageView(Play_PRE_CONTENT_RECT_Transparent_L));
                     playButton.setText("Pause");
                 }
             } else if (id.equals("stop")) {

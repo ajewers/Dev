@@ -619,6 +619,23 @@ public class Audio {
 		Double currentValuePerCent = (percentSeek / 100);
 		player.seek(Duration.millis(durationMillis * currentValuePerCent));
 	}
-
-
+	
+	/**
+	 * Method to return the width of the outermost Box containing the audio handler
+	 * 
+	 * @return width of the box as a double
+	 */
+	public double returnWidth() {
+		return mediaControlsVBox.getWidth();				
+	}
+	
+	/**
+	 * Method to return the height of the outermost Box containing the audio handler
+	 * 
+	 * @return height of the box as a double
+	 */
+	public double returnHeight() {
+		return mediaControlsVBox.getHeight();				
+	}
+	
 }

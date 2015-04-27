@@ -207,4 +207,30 @@ public class AudioHandler {
         return audios.size();
     }
     
+    /**
+     * Returns the width of the selected audio object
+     * 
+     * @return Width of the audio player
+     */
+    public double getAudioWidth(int audioId) {
+    	if(audioId < audios.size() && audioId >= 0) {
+    		return audios.get(audioId).returnWidth();
+    	} else {
+    		return -1;
+    	}
+    }
+    
+    /**
+     * Returns the height of the selected audio object
+     * 
+     * @return Height of the audio player
+     */
+    public double getAudioHeight(int audioId) {
+    	if(audioId < audios.size() && audioId >= 0) {
+    		return audios.get(audioId).returnHeight();
+    	} else {
+    		return -1;
+    	}
+    }
+    
 }

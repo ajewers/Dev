@@ -68,6 +68,11 @@ public class ImageHandlerDummyGUI extends Application {
         imageHandler.createImage("http://www.county-vets.co.uk/media/resources/rabbit.jpg",
         		600, 100, 1, 1, 0);
         
+        System.out.println(imageHandler.getHeight(0));
+        System.out.println(imageHandler.getWidth(0));
+        System.out.println(imageHandler.getHeight(1));
+        System.out.println(imageHandler.getWidth(1));
+        
         
         /* Show the window */
         primaryStage.show(); 

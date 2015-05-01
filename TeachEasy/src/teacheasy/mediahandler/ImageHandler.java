@@ -65,10 +65,10 @@ public class ImageHandler {
      * 
      * @return Width of the image
      */
-    public double getAudioWidth(int audioId) {
+    public double getWidth(int imageId) {
     	double width = 0;
-    	if(audioId < images.size() && audioId >= 0) {
-    		width = images.get(audioId).getImageWidth();
+    	if(imageId < images.size() && imageId >= 0) {
+    		width = images.get(imageId).getImageWidth();
     	}
     	return width;
     }
@@ -78,10 +78,10 @@ public class ImageHandler {
      * 
      * @return Height of the image
      */
-    public double getAudioHeight(int audioId) {
+    public double getHeight(int imageId) {
     	double height = 0;
-    	if(audioId < images.size() && audioId >= 0) {
-    		height = images.get(audioId).getImageHeight();
+    	if(imageId < images.size() && imageId >= 0) {
+    		height = images.get(imageId).getImageHeight();
     	}
     	return height;
     }

@@ -335,11 +335,16 @@ public class EditorRunTimeData {
         if(index == lesson.pages.get(currentPage).pageObjects.size()) {
             index = 0;
         }
-        
+        outlineSelected(lesson.pages.get(currentPage), lesson.pages.get(currentPage).pageObjects.get(index));
         propertiesPane.update(lesson.pages.get(currentPage), lesson.pages.get(currentPage).pageObjects.get(index));
     }
     
-    
+    public void outlineSelected(Page nSelectedPage, PageObject nSelectedObject) {
+    	//Placeholder to outline media object
+    	//Get the type - call the relevant getheight/getwidth methods
+    	//draw a box using the co-ordinates and size with the graphics handler
+    	//make it a thick line. bosh.
+    }
     /** Redraw the content */
     public void redraw(Group group, Rectangle2D bounds) {        
         if(isLessonOpen()) {

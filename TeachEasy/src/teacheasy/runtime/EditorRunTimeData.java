@@ -43,6 +43,12 @@ public class EditorRunTimeData {
     private int currentPage;
     private boolean lessonOpen;
     
+    /* The reference for the currently selected object */
+    private PageObject selectedObject;
+    
+    /* The reference for the currently selected page */
+    private Page selectedPage;
+    
     /* Current Lesson */
     private Lesson lesson;
     
@@ -343,7 +349,39 @@ public class EditorRunTimeData {
     	//Placeholder to outline media object
     	//Get the type - call the relevant getheight/getwidth methods
     	//draw a box using the co-ordinates and size with the graphics handler
-    	//make it a thick line. bosh.
+    	//make it a thick line. bosh. 
+    	float xStart, yStart = 0;
+    	double objectWidth, objectHeight = 0;
+    	this.selectedPage = nSelectedPage;
+        this.selectedObject = nSelectedObject;
+        
+    	 if(selectedObject != null) {
+             switch(selectedObject.getType()) {
+                 case TEXT:
+                     break;  
+                 case IMAGE:
+                	 xStart = selectedObject.getXStart();
+                	 yStart = selectedObject.getYStart(); 
+                	 objectWidth = Math.round(renderer.imageHandler.getWidth(0)) + 1;
+                	 objectHeight = Math.round(renderer.imageHandler.getHeight(0)) + 1;                	 
+                	 System.out.println(objectWidth + "x" + objectHeight);
+                	 
+                     break;
+                 case VIDEO:
+                     break;
+                 case AUDIO:
+                     break;
+                 case GRAPHIC:
+                     break;
+                 case ANSWER_BOX:
+                     break;
+                 case MULTIPLE_CHOICE:
+                     break;
+                 default:
+                     break;
+             }
+             renderer.graphicsHandler.
+    	 }    	
     }
     /** Redraw the content */
     public void redraw(Group group, Rectangle2D bounds) {        

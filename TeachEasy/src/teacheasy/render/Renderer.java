@@ -28,9 +28,9 @@ public class Renderer {
     private Rectangle2D bounds;
     
     private VideoHandler videoHandler;
-    private ImageHandler imageHandler;
+    public ImageHandler imageHandler;
     private TextHandler textHandler;
-    private GraphicsHandler graphicsHandler;
+    public GraphicsHandler graphicsHandler;
     private AnswerBoxHandler answerBoxHandler;
     private MultipleChoiceHandler multipleChoiceHandler;
     private AudioHandler audioHandler;
@@ -185,7 +185,7 @@ public class Renderer {
     }
     
     /** Render a graphic object on a page */
-    private void renderGraphic(GraphicObject graphic) {
+    public void renderGraphic(GraphicObject graphic) {
         float xstart = (float)bounds.getMaxX() * graphic.getXStart();
         float ystart = (float)bounds.getMaxY() * graphic.getYStart();
         float xend = (float)bounds.getMaxX() * graphic.getXEnd();

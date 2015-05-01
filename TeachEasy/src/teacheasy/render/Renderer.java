@@ -176,7 +176,7 @@ public class Renderer {
     
     /** Render an image on a page */
     private void renderImage(ImageObject image) {
-        imageHandler.insertImage(image.getSourcefile(),
+        imageHandler.createImage(image.getSourcefile(),
                                  bounds.getMaxX() * image.getXStart(), 
                                  bounds.getMaxY() * image.getYStart(),
                                  image.getxScaleFactor(), 

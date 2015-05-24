@@ -56,17 +56,20 @@ public class ImageHandlerDummyGUI extends Application {
         btn.setOnAction(new buttonEventHandler());
         
         /* Add the button to the group */
-        group.getChildren().addAll(btn);
+        //group.getChildren().addAll(btn);
         
         /*Instantiate the image handler*/
         imageHandler = new ImageHandler(group);
         
         /*Use the image handler to create an image stored on disk*/
-        imageHandler.insertImage("rabbit.jpg", 0, 100, 1, 1, 0);
+       // imageHandler.createImage("rabbit.jpg", 0, 100, 1, 1, 0);
         
         /*Use the image handler to create an image stored online*/
-        imageHandler.insertImage("http://www.county-vets.co.uk/media/resources/rabbit.jpg",
+        imageHandler.createImage("http://www.county-vets.co.uk/media/resources/rabbit.jpg",
         		600, 100, 1, 1, 0);
+        
+        imageHandler.createImage("http://www.county-vets.co.uk/media/resources/rabbit.jpg",
+        		0, 0, 1, 1, 0);
         
         
         /* Show the window */

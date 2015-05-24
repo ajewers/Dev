@@ -22,7 +22,7 @@ public class ImageObject {
 
 
 	private Group group;
-	private ImageView imageView;
+	public ImageView imageView;
 	
 	/**
 	 * 
@@ -108,6 +108,15 @@ public class ImageObject {
       }
     
     /**
+     * Return image start x position
+     * 
+     * @return start x position
+     */
+    public double getXStart(){
+    	return imageView.getX();
+    }
+    
+    /**
      * Return image width
      * 
      * @return image width
@@ -124,6 +133,6 @@ public class ImageObject {
     public double getImageHeight(){
     	return imageView.getFitHeight();
     }
-	
+    
 	
 }

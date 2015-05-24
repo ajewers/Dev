@@ -56,7 +56,7 @@ public class ImageHandlerDummyGUI extends Application {
         btn.setOnAction(new buttonEventHandler());
         
         /* Add the button to the group */
-        //group.getChildren().addAll(btn);
+        group.getChildren().addAll(btn);
         
         /*Instantiate the image handler*/
         imageHandler = new ImageHandler(group);
@@ -69,7 +69,8 @@ public class ImageHandlerDummyGUI extends Application {
         		600, 100, 1, 1, 0);
         
         imageHandler.createImage("http://www.county-vets.co.uk/media/resources/rabbit.jpg",
-        		0, 0, 1, 1, 0);
+        		250, 0, 1, 1, 0);
+        
         
         
         /* Show the window */
@@ -89,13 +90,17 @@ public class ImageHandlerDummyGUI extends Application {
     public class buttonEventHandler implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent e) {
-            /* Cast the source of the event to a button */
-            Button button = (Button)e.getSource();
-            
-            /* Act based on the ID of the button */
-            if(button.getId().equals("Button1")) {
-                System.out.println("Button Pressed");
-            }
+//            /* Cast the source of the event to a button */
+//            Button button = (Button)e.getSource();
+
+//            /* Act based on the ID of the button */
+//            if(button.getId().equals("Button1")) {
+//                System.out.println("Button Pressed");
+//            }
+        	
+        	System.out.println(imageHandler.getXEnd(0));
+        	System.out.println(imageHandler.getYEnd(0));
+        	System.out.println(imageHandler.getYEnd(1));
         }
     }  
 }

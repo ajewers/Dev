@@ -79,5 +79,34 @@ public class ImageHandler {
     	}
     	return height;
     }
-	
+    
+    /**
+     * Return end point x co-ordinate
+     * 
+     * @return image end x co-ordinate
+     */
+    public double getXEnd(int imageId) {
+    	double xStart = images.get(imageId).imageView.getLayoutX();  	
+    	double xWidth = getWidth(imageId);
+    	double xEnd = 0;    	
+    	if(imageId < images.size() && imageId >= 0) {
+    		return xEnd = xStart + xWidth;
+    	}
+    	return xEnd;
+    }
+    
+    /**
+     * Return end point y co-ordinate
+     * 
+     * @return image end y co-ordinate
+     */
+    public double getYEnd(int imageId) {
+    	double yStart = images.get(imageId).imageView.getLayoutY();  	
+    	double yWidth = getHeight(imageId);
+    	double yEnd = 0;    	
+    	if(imageId < images.size() && imageId >= 0) {
+    		return yEnd = yStart + yWidth;
+    	}
+    	return yEnd;
+    }
 }
